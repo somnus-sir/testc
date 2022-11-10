@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('error') {
       steps {
-        sleep 1
+        sh 'echo "1"'
       }
     }
 
