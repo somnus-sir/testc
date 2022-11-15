@@ -8,25 +8,8 @@ pipeline {
     }
 
     stage('test') {
-      parallel {
-        stage('test') {
-          steps {
-            powershell 'echo "unit test"'
-          }
-        }
-
-        stage('') {
-          steps {
-            powershell 'echo "lint-test"'
-          }
-        }
-
-      }
-    }
-
-    stage('deploy') {
       steps {
-        powershell 'echo "deploy"'
+        sh 'echo "test"'
       }
     }
 
