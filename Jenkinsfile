@@ -1,9 +1,32 @@
 pipeline {
   agent any
   stages {
-    stage('error') {
+    stage('build') {
       steps {
-        sh 'echo "1"'
+        sh 'echo "build"'
+      }
+    }
+
+    stage('test') {
+      parallel {
+        stage('test') {
+          steps {
+            powershell 'echo "unit test"'
+          }
+        }
+
+        stage('') {
+          steps {
+            powershell 'echo "lint-test"'
+          }
+        }
+
+      }
+    }
+
+    stage('deploy') {
+      steps {
+        powershell 'echo "deploy"'
       }
     }
 
