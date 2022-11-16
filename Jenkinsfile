@@ -9,13 +9,13 @@ pipeline {
 
     stage('test') {
       parallel {
-        stage('unit-test') {
+        stage('test1') {
           steps {
             sh 'echo "unit-test"'
           }
         }
 
-        stage('lint-test') {
+        stage('test2') {
           steps {
             sh 'echo "lint-test"'
           }
